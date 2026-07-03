@@ -66,29 +66,14 @@
       animation: logoFadeIn 1.8s ease forwards;
     }
 
-    .bg-video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      opacity: 0.75;
-    }
-
     .video-only {
       padding: 0;
       background: #F3EEE6;
     }
 
-    .video-only::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(247, 242, 234, 0.18);
-      z-index: 1;
-      pointer-events: none;
-    }
+.video-only::after {
+  display: none;
+}
 
     .inner {
       position: relative;
