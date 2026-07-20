@@ -1076,15 +1076,13 @@ ul {
   width: 118px;
   height: auto;
 }
-
 .footer-logo-image {
   display: block;
   width: 150px;
   height: auto;
   margin-bottom: 24px;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
-
 @media (max-width: 767px) {
   :root {
     --header-height: 72px;
