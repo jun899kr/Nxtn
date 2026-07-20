@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>NXTN Company</title>
 
   <style>
@@ -25,7 +24,6 @@
       color: #333;
     }
 
-    /* 언어 선택 버튼 */
     .lang-switch {
       position: fixed;
       top: 24px;
@@ -57,7 +55,6 @@
       border-color: #B89155;
     }
 
-    /* 공통 섹션 */
     section {
       position: relative;
       width: 100%;
@@ -71,7 +68,6 @@
       overflow: hidden;
     }
 
-    /* 첫 번째 로고 섹션 */
     .logo-hero {
       padding: 0;
       background-color: #F7F2EA;
@@ -82,17 +78,19 @@
       animation: logoFadeIn 1.8s ease forwards;
     }
 
-    /* 영상 섹션 */
     .video-only {
+      position: relative;
       padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
       background: #F3EEE6;
+      overflow: hidden;
     }
 
     .bg-video {
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -100,17 +98,14 @@
       display: block;
     }
 
-    /* PC 영상 기본 노출 */
     .desktop-video {
       display: block;
     }
 
-    /* 모바일 영상 기본 숨김 */
     .mobile-video {
       display: none;
     }
 
-    /* 텍스트 영역 */
     .inner {
       position: relative;
       z-index: 2;
@@ -123,9 +118,7 @@
     .fade-section > a {
       opacity: 0;
       transform: translateY(34px);
-      transition:
-        opacity 1.1s ease,
-        transform 1.1s ease;
+      transition: opacity 1.1s ease, transform 1.1s ease;
     }
 
     .fade-section.show .inner,
@@ -135,16 +128,12 @@
       transform: translateY(0);
     }
 
-    /* 회사 소개 */
     .about {
       background: #EFE7DD;
-      color: #333;
     }
 
-    /* WPC 소개 */
     .wpc-info {
       background: #F8F6F2;
-      color: #333;
     }
 
     .about h2,
@@ -164,10 +153,8 @@
       word-break: keep-all;
     }
 
-    /* 연락처 */
     .contact {
       background: #E7DDD1;
-      color: #333;
       flex-direction: column;
     }
 
@@ -189,7 +176,6 @@
       }
     }
 
-    /* 모바일 */
     @media (max-width: 768px) {
       .lang-switch {
         top: 16px;
@@ -202,23 +188,20 @@
         background-position: center center;
       }
 
-      /* PC 영상 숨김 */
       .desktop-video {
         display: none;
       }
 
-      /* 모바일 정방형 영상 노출 */
       .mobile-video {
         display: block;
       }
 
-      .bg-video {
-        object-fit: cover;
-        object-position: center center;
-      }
-
       section {
         padding: 40px 20px;
+      }
+
+      .video-only {
+        padding: 0;
       }
     }
   </style>
@@ -227,29 +210,18 @@
 <body>
 
   <div class="lang-switch">
-    <button
-      type="button"
-      class="active"
-      onclick="setLanguage('ko')"
-    >
+    <button type="button" class="active" onclick="setLanguage('ko')">
       KOR
     </button>
 
-    <button
-      type="button"
-      onclick="setLanguage('en')"
-    >
+    <button type="button" onclick="setLanguage('en')">
       ENG
     </button>
   </div>
 
-  <!-- 첫 번째 로고 화면 -->
   <section class="hero logo-hero"></section>
 
-  <!-- 두 번째 영상 화면 -->
   <section class="video-only">
-
-    <!-- PC용 16:9 영상 -->
     <video
       class="bg-video desktop-video"
       autoplay
@@ -258,13 +230,9 @@
       playsinline
       preload="auto"
     >
-      <source
-        src="videos/16n9-nxtn.MP4"
-        type="video/MP4"
-      />
+      <source src="videos/16n9-nxtn.MP4" type="video/mp4" />
     </video>
 
-    <!-- 모바일용 1:1 정방형 영상 -->
     <video
       class="bg-video mobile-video"
       autoplay
@@ -273,21 +241,13 @@
       playsinline
       preload="auto"
     >
-      <source
-        src="videos/1n1-nxtn.MP4"
-        type="video/MP4"
-      />
+      <source src="videos/1n1-nxtn.MP4" type="video/mp4" />
     </video>
-
   </section>
 
-  <!-- 회사 소개 -->
   <section class="about fade-section">
     <div class="inner">
-      <h2
-        data-ko="NXTN Company"
-        data-en="NXTN Company"
-      >
+      <h2 data-ko="NXTN Company" data-en="NXTN Company">
         NXTN Company
       </h2>
 
@@ -301,13 +261,9 @@
     </div>
   </section>
 
-  <!-- WPC 소개 -->
   <section class="wpc-info fade-section">
     <div class="inner">
-      <h2
-        data-ko="WPC Deck"
-        data-en="WPC Deck"
-      >
+      <h2 data-ko="WPC Deck" data-en="WPC Deck">
         WPC Deck
       </h2>
 
@@ -321,12 +277,8 @@
     </div>
   </section>
 
-  <!-- 연락처 -->
   <section class="contact fade-section">
-    <h2
-      data-ko="Contact"
-      data-en="Contact"
-    >
+    <h2 data-ko="Contact" data-en="Contact">
       Contact
     </h2>
 
@@ -339,17 +291,13 @@
     function setLanguage(lang) {
       document.documentElement.lang = lang;
 
-      document
-        .querySelectorAll("[data-ko][data-en]")
-        .forEach(function (element) {
-          element.textContent = element.dataset[lang];
-        });
+      document.querySelectorAll("[data-ko][data-en]").forEach(function (el) {
+        el.textContent = el.dataset[lang];
+      });
 
-      document
-        .querySelectorAll(".lang-switch button")
-        .forEach(function (button) {
-          button.classList.remove("active");
-        });
+      document.querySelectorAll(".lang-switch button").forEach(function (btn) {
+        btn.classList.remove("active");
+      });
 
       if (lang === "ko") {
         document
@@ -377,25 +325,16 @@
       }
     );
 
-    document
-      .querySelectorAll(".fade-section")
-      .forEach(function (section) {
-        observer.observe(section);
-      });
+    document.querySelectorAll(".fade-section").forEach(function (section) {
+      observer.observe(section);
+    });
 
-    /*
-      모바일에서 CSS 전환 후 영상이 정지되는 경우를 방지합니다.
-    */
     function playVisibleVideo() {
-      const videos = document.querySelectorAll(".bg-video");
+      document.querySelectorAll(".bg-video").forEach(function (video) {
+        const visible = window.getComputedStyle(video).display !== "none";
 
-      videos.forEach(function (video) {
-        const isVisible = window.getComputedStyle(video).display !== "none";
-
-        if (isVisible) {
-          video.play().catch(function () {
-            // 자동재생이 차단되더라도 페이지 오류는 발생시키지 않습니다.
-          });
+        if (visible) {
+          video.play().catch(function () {});
         } else {
           video.pause();
         }
