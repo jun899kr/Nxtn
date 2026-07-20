@@ -621,15 +621,13 @@ ul {
   justify-content: space-between;
   gap: 60px;
 }
-
-.footer-logo {
+.footer-logo-image {
+  width: 170px;
+  height: auto;
+  display: block;
   margin-bottom: 24px;
-  color: #ffffff;
-  font-size: 37px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.15em;
 }
+
 
 .footer-slogan {
   color: #ffffff;
