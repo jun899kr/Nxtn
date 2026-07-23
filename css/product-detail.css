@@ -461,7 +461,9 @@
   }
 
   .product-gallery img {
-    min-height: 60vw;
+     height: auto;
+  min-height: 0;
+  object-fit: contain;
   }
 }
 
