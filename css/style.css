@@ -531,7 +531,7 @@ ul {
 .service-card > p:not(.card-number) {
   color: #5f5b55;
 
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.9;
 }
 
@@ -1144,7 +1144,7 @@ ul {
       Arial,
       sans-serif;
 
-    font-size: clamp(30px, 10vw, 46px);
+    font-size: clamp(26px, 8vw, 38px);
     line-height: 1.08;
     font-weight: 500;
     letter-spacing: -0.035em;
@@ -1236,8 +1236,8 @@ ul {
   .section-description {
     margin-top: 22px;
 
-    font-size: 14px;
-    line-height: 1.75;
+    font-size: 15px;
+    line-height: 1.8;
   }
 
 
@@ -1301,7 +1301,7 @@ ul {
   }
 
   .service-card > p:not(.card-number) {
-    font-size: 14px;
+    font-size: 16px;
   }
 
 
@@ -1483,7 +1483,7 @@ ul {
 
 @media (max-width: 390px) {
   .mobile-menu-inner > a {
-    font-size: 34px;
+    font-size: 26px;
   }
 
   .product-banner {
